@@ -2,135 +2,135 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sensei-insitu.org/index.html</loc>
-    
-    <lastmod>2021-06-03T17:32:00.708Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/tutorials/index.html</loc>
-    
-    <lastmod>2021-06-03T17:32:00.708Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/tutorials/sc19.html</loc>
-    
-    <lastmod>2021-06-03T17:23:42.323Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/tutorials/sc18.html</loc>
-    
-    <lastmod>2021-06-03T17:23:42.323Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/tutorials/isc19.html</loc>
-    
-    <lastmod>2021-06-03T16:59:47.320Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/tutorials/sc17.html</loc>
-    
-    <lastmod>2021-06-03T16:59:47.320Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/learn-more/about.html</loc>
-    
-    <lastmod>2021-06-03T16:59:47.316Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/learn-more/index.html</loc>
-    
-    <lastmod>2021-06-03T16:59:47.316Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/develop/python-analysis.html</loc>
-    
-    <lastmod>2021-06-03T16:59:47.316Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/2018/05/04/20180504-website/</loc>
-    
-    <lastmod>2021-06-03T16:59:47.316Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/learn-more/participants.html</loc>
-    
-    <lastmod>2021-06-03T16:59:47.316Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/learn-more/presentations.html</loc>
-    
-    <lastmod>2021-06-03T16:59:47.316Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/learn-more/software.html</loc>
-    
-    <lastmod>2021-06-03T16:59:47.316Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://sensei-insitu.org/learn-more/papers.html</loc>
     
-    <lastmod>2021-06-03T16:59:47.316Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/develop/contribute.html</loc>
-    
-    <lastmod>2021-06-03T16:59:47.316Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/develop/index.html</loc>
-    
-    <lastmod>2021-06-03T16:59:47.316Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sensei-insitu.org/develop/testing.html</loc>
-    
-    <lastmod>2021-06-03T16:59:47.316Z</lastmod>
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://sensei-insitu.org/develop/adios-schema.html</loc>
     
-    <lastmod>2021-06-03T16:59:47.316Z</lastmod>
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/index.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/develop/contribute.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/develop/index.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/develop/python-analysis.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/develop/testing.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/learn-more/about.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/learn-more/index.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/2018/05/04/20180504-website/</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/learn-more/participants.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/learn-more/presentations.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/learn-more/software.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/tutorials/index.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/tutorials/isc19.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/tutorials/sc17.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/tutorials/sc19.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sensei-insitu.org/tutorials/sc18.html</loc>
+    
+    <lastmod>2021-06-03T17:41:45.653Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://sensei-insitu.org/2016/04/28/kw-doc/</loc>
     
-    <lastmod>2021-06-03T16:59:47.308Z</lastmod>
+    <lastmod>2021-06-03T17:41:45.645Z</lastmod>
     
   </url>
   
