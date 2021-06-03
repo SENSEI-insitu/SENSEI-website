@@ -8,9 +8,9 @@ module.exports = {
     subtitle: '"Lightweight, zero-copy simulation adaptor."',
     author: 'sensei',
     timezone: 'UTC',
-    url: 'https://kitware.github.io/sensei',
+    url: 'https://SENSEI-insitu.github.io/SENSEI-website',
     root: '/',
-    github: 'kitware/sensei',
+    github: 'SENSEI-insitu/SENSEI-website',
     authorLink: 'https://www.kitware.com/',
     markdown: {
       gfm: false,

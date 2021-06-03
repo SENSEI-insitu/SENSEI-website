@@ -11,13 +11,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.kitware.com/sensei/sensei.git"
+    "url": "https://github.com/SENSEI-insitu/SENSEI.git"
   },
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://gitlab.kitware.com/sensei/sensei/issues"
+    "url": "https://github.com/SENSEI-insitu/SENSEI/issues"
   },
-  "homepage": "https://gitlab.kitware.com/sensei/sensei",
+  "homepage": "https://github.com/SENSEI-insitu/SENSEI",
   "devDependencies": {
     "kw-doc": "1.3.0",
     "kw-web-suite": "6.0.2"

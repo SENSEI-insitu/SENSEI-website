@@ -25,7 +25,7 @@ The analysis adaptor is also the mechanism for the SENSEI interface to connect w
 The SENSEI generic data interface creates several possibilities for in situ, in transit, in flight and hybrid analysis. In enables a developer to instrument a simulation code once, then have access to multiple in situ infrastructures. Allowing additional in situ infrastructures to be coupled via the SENSEI generic data interface provides a number of analysis techniques to map to future high-performance computing architectures.
  The current limitations of the SENSEI interface are an incomplete data model and an immature analysis adaptor specification. The SENSEI interface will truly be simpler when more complex simulation data structures easily map to the SENSEI data model through the data adaptor. Although this study examined several analysis and visualization use cases, this is just the tip of an iceberg of analysis techniques, and the adaptor infrastructure must grow to accommodate the requirements of the others.
 
-Download the SENSEI generic data interface [here](https://gitlab.kitware.com/sensei/sensei).
+Download the SENSEI generic data interface [here](https://github.com/SENSEI-insitu/SENSEI).
 
 ## Analysis and Visualization
 
