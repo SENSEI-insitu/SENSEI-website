@@ -26,4 +26,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         env:
           GIT_PUBLISH_URL: https://${{ secrets.GH_PUBLISH_CREDS }}@github.com/SENSEI-insitu/SENSEI-website.git
-        run: npm run doc:publish
+        run: |
+          git config --global user.name "Github Actions"
+          git config --global user.email "ryan.krattiger@kitware.com"
+          npm run doc:publish
