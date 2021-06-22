@@ -2,16 +2,12 @@
 <html lang="en">
 <head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>sensei</title>
+  <title>News | sensei</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://sensei-insitu.org/develop/index.html">
+  <link rel="canonical" href="https://sensei-insitu.org/news/2021/06/index.html">
   <!-- Alternative links -->
-  
-    
-      <link rel="alternative" hreflang="en" href="https://sensei-insitu.org/develop/index.html">
-    
   
   <!-- Icon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
@@ -39,17 +35,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="sensei">
   <!-- Open Graph -->
-  <meta name="description" content="Developing with SENSEISENSEI is a framework that accepts data from a simulation in VTK format.">
+  <meta name="description" content="Scalable in situ visualization and analysis.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="sensei">
-<meta property="og:url" content="https://sensei-insitu.org/develop/index.html">
+<meta property="og:title" content="News">
+<meta property="og:url" content="https://sensei-insitu.org/news/2021/06/index.html">
 <meta property="og:site_name" content="sensei">
-<meta property="og:description" content="Developing with SENSEISENSEI is a framework that accepts data from a simulation in VTK format.">
+<meta property="og:description" content="Scalable in situ visualization and analysis.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-06-22T23:06:09.655Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sensei">
-<meta name="twitter:description" content="Developing with SENSEISENSEI is a framework that accepts data from a simulation in VTK format.">
+<meta name="twitter:title" content="News">
+<meta name="twitter:description" content="Scalable in situ visualization and analysis.">
   <!-- Google Analytics -->
   
 </head>
@@ -79,43 +74,51 @@
   </div>
 </header>
 
-    <div id="content-wrap">
-  <div id="content" class="wrapper">
-    <div id="content-inner">
-      <article class="article-container" itemscope itemtype="http://schema.org/Article">
-        <div class="article-inner">
-          <div class="article">
-            <div class="inner">
-              <header class="article-header">
-                <h1 class="article-title" itemprop="name"></h1>
-              </header>
-              <div class="article-content" itemprop="articleBody">
-                <h1 id="Developing-with-SENSEI" class="article-heading"><a href="#Developing-with-SENSEI" class="headerlink" title="Developing with SENSEI"></a>Developing with SENSEI<a class="article-anchor" href="#Developing-with-SENSEI" aria-hidden="true"></a></h1><p>SENSEI is a framework that accepts data from a simulation in VTK format.</p>
+    
+<div id="content-wrap">
+  <div class="wrapper">
+    <div class="inner">
+      
+        
+          <article class="article post" itemscope itemtype="http://schema.org/Article">
+  <header class="article-header">
+    
+      <h1>
+        <a href="/2021/06/22/20210622-moved-repository/" class="article-title" itemprop="name">SENSEI-insitu moved to GitHub</a>
+      </h1>
+    
+    <a href="/2021/06/22/20210622-moved-repository/" class="article-date"><time datetime="2021-06-22T15:35:00.000Z">2021-06-22</time></a>
+  </header>
+  <div class="article-content" itemprop="articleBody">
+    <h1 id="For-Developers" class="article-heading"><a href="#For-Developers" class="headerlink" title="For Developers"></a>For Developers<a class="article-anchor" href="#For-Developers" aria-hidden="true"></a></h1><p>With the move to GitHub we need your help to move relevent issues from the archived GitLab instance to the new GitHub instance. Provided is a checklist of things to do to make sure this is all done.</p>
+<ul>
+<li>Make an account on <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+<li>(optional) Star the new <a href="https://github.com/SENSEI-insitu/SENSEI" target="_blank" rel="noopener">SENSEI-insitu/SENSEI</a> repository</li>
+<li>(optional) Make a development fork </li>
+<li><a href="#Adding-a-remote">Add a new remote</a> for the <a href="https://github.com/SENSEI-insitu/SENSEI" target="_blank" rel="noopener">GitHub repository</a> (or your fork)</li>
+<li><a href="#Push-branches">Push branches</a> that are currently being developed to github</li>
+<li>Re-open active issues and MRs from GitLab in the new repository’s <a href="https://github.com/SENSEI-insitu/SENSEI/issues" target="_blank" rel="noopener">issues</a> and <a href="https://github.com/SENSEI-insitu/SENSEI/pulls" target="_blank" rel="noopener">pull requests</a></li>
+<li><a href="#Update origin">Update</a> <code>origin</code> to point at the new repository</li>
+</ul>
+<h3 id="Adding-a-remote" class="article-heading"><a href="#Adding-a-remote" class="headerlink" title="Adding a remote"></a>Adding a remote<a class="article-anchor" href="#Adding-a-remote" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git remote add github https://github.com/SENSEI-insitu/SENSEI.git</span><br></pre></td></tr></table></figure>
+<p>or if you have a fork</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git remote add github https://github.com/my-github-id/SENSEI.git</span><br></pre></td></tr></table></figure>
+<h3 id="Push-branches" class="article-heading"><a href="#Push-branches" class="headerlink" title="Push branches"></a>Push branches<a class="article-anchor" href="#Push-branches" aria-hidden="true"></a></h3><p>You will have to run this for each development branch</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git push github my-feature-branch</span><br></pre></td></tr></table></figure>
+<h3 id="Update-origin" class="article-heading"><a href="#Update-origin" class="headerlink" title="Update origin"></a>Update origin<a class="article-anchor" href="#Update-origin" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git remote <span class="built_in">set</span>-url origin https://github.com/SENSEI-insitu/SENSEI.git</span><br></pre></td></tr></table></figure>
+<p>and optionally, if you have a fork</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git remote <span class="built_in">set</span>-url --push origin https://github.com/my-github-id/SENSEI.git</span><br></pre></td></tr></table></figure>
+<p>If there are any questions about the transitions to GitHub, please contact <a href="mailto:ryan.krattiger@kitware.com" target="_blank" rel="noopener">Ryan Krattiger</a></p>
 
-              </div>
-              <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2021-06-22T23:06:09.655Z" itemprop="dateModified">Last updated: 2021-06-22</time>
-                <a href="python-analysis.html" class="article-footer-next" title="Python Analysis"><span>Next</span><i class="fa fa-chevron-right"></i></a>
-              </footer>
-              
-            </div>
-          </div>
-          <aside id="article-toc" role="navigation">
-            <div id="article-toc-inner">
-              <strong class="sidebar-title">Contents</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Developing-with-SENSEI"><span class="toc-text">Developing with SENSEI</span></a></li></ol>
-              <a href="#" id="article-toc-top">Back to Top</a>
-            </div>
-          </aside>
-        </div>
-      </article>
-      <aside id="sidebar" role="navigation">
-  <div class="inner"><strong class="sidebar-title">Using</strong><a href="index.html" class="sidebar-link current">Overview</a><a href="python-analysis.html" class="sidebar-link">Python Analysis</a><a href="adios-schema.html" class="sidebar-link">Dataset schema</a><strong class="sidebar-title">Contributing</strong><a href="contribute.html" class="sidebar-link">Overview</a><a href="testing.html" class="sidebar-link">Testing</a></div>
-</aside>
+  </div>
+  
+</article>
+
+        
+      
     </div>
   </div>
 </div>
-
     <footer id="footer" class="wrapper">
   <div class="inner">
     <div id="footer-copyright">
@@ -137,8 +140,6 @@
         <a href="https://github.com/SENSEI-insitu/SENSEI" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
       </li>
     </ul>
-    
-      <strong class="mobile-nav-title">Using</strong><a href="index.html" class="mobile-nav-link current">Overview</a><a href="python-analysis.html" class="mobile-nav-link">Python Analysis</a><a href="adios-schema.html" class="mobile-nav-link">Dataset schema</a><strong class="mobile-nav-title">Contributing</strong><a href="contribute.html" class="mobile-nav-link">Overview</a><a href="testing.html" class="mobile-nav-link">Testing</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
