@@ -39,17 +39,17 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="sensei">
   <!-- Open Graph -->
-  <meta name="description" content="CTest Regression DashboardA number of systems have been configured for nightly testing and continuous integration.To view the results of these runs navigate your web browser to http://cdash.hpcvis.com">
+  <meta name="description" content="Running the testsTo enable the regression tests one must configure the build with testing enabled. To check for any known failures you may check the dashboard cmake -DBUILD_TESTING=ON ... To run the r">
 <meta property="og:type" content="website">
 <meta property="og:title" content="sensei">
 <meta property="og:url" content="https://sensei-insitu.org/develop/testing.html">
 <meta property="og:site_name" content="sensei">
-<meta property="og:description" content="CTest Regression DashboardA number of systems have been configured for nightly testing and continuous integration.To view the results of these runs navigate your web browser to http://cdash.hpcvis.com">
+<meta property="og:description" content="Running the testsTo enable the regression tests one must configure the build with testing enabled. To check for any known failures you may check the dashboard cmake -DBUILD_TESTING=ON ... To run the r">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2021-06-22T23:06:09.655Z">
+<meta property="og:updated_time" content="2021-06-22T23:31:23.837Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sensei">
-<meta name="twitter:description" content="CTest Regression DashboardA number of systems have been configured for nightly testing and continuous integration.To view the results of these runs navigate your web browser to http://cdash.hpcvis.com">
+<meta name="twitter:description" content="Running the testsTo enable the regression tests one must configure the build with testing enabled. To check for any known failures you may check the dashboard cmake -DBUILD_TESTING=ON ... To run the r">
   <!-- Google Analytics -->
   
 </head>
@@ -90,30 +90,104 @@
                 <h1 class="article-title" itemprop="name"></h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <h1 id="CTest-Regression-Dashboard" class="article-heading"><a href="#CTest-Regression-Dashboard" class="headerlink" title="CTest Regression Dashboard"></a>CTest Regression Dashboard<a class="article-anchor" href="#CTest-Regression-Dashboard" aria-hidden="true"></a></h1><p>A number of systems have been configured for nightly testing and continuous integration.<br>To view the results of these runs navigate your web browser to <a href>http://cdash.hpcvis.com/index.php?project=SENSEI</a>.</p>
-<h1 id="Running-the-tests" class="article-heading"><a href="#Running-the-tests" class="headerlink" title="Running the tests"></a>Running the tests<a class="article-anchor" href="#Running-the-tests" aria-hidden="true"></a></h1><p>To enable the regression tests one must configure the build with testing enabled.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cmake -DBUILD_TESTING=ON ...</span><br></pre></td></tr></table></figure></p>
-<p>To run the regression tests locally, from the build directory issue ctest command.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> build_dir</span><br><span class="line">ctest</span><br></pre></td></tr></table></figure></p>
-<p>To run the tests and submit the results to the web dashboard add the ctest track option. Note, that it is case sensitive.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ctest -DExperimental</span><br></pre></td></tr></table></figure></p>
-<h1 id="Adding-regression-tests-using-CTest" class="article-heading"><a href="#Adding-regression-tests-using-CTest" class="headerlink" title="Adding regression tests using CTest"></a>Adding regression tests using CTest<a class="article-anchor" href="#Adding-regression-tests-using-CTest" aria-hidden="true"></a></h1><h3 id="senseiAddTest" class="article-heading"><a href="#senseiAddTest" class="headerlink" title="senseiAddTest"></a>senseiAddTest<a class="article-anchor" href="#senseiAddTest" aria-hidden="true"></a></h3><p>Tests are added by calling the CMake function <em>senseiAddTest</em>. This function<br>encapsulates the common scenarios needed to compile, link, and run tests in<br>serial, and parallel; and configures CTest to flag absolute test failures<br>(those retrurning non-zero exit code) as well as tests that print the word<br><code>ERROR</code> (case insensitive). Given that not all tests require a compile/link<br>step(eg Python based tests) arguments related to these steps are optional.<br><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> senseiAddTest(&lt;<span class="keyword">test</span> name&gt;</span><br><span class="line">  <span class="keyword">COMMAND</span> &lt;<span class="keyword">command</span> line w/ args&gt;</span><br><span class="line">  [EXEC_NAME &lt;exec name&gt;]</span><br><span class="line">  [SOURCES &lt;source <span class="keyword">file</span> <span class="number">1</span>&gt; .. &lt;source <span class="keyword">file</span> n&gt;]</span><br><span class="line">  [LIBS &lt;lib <span class="number">1</span>&gt; .. &lt;lib n&gt;]</span><br><span class="line">  [FEATURES &lt;condition <span class="number">1</span>&gt; .. &lt; condition n&gt;]</span><br><span class="line">  [REQ_SENSEI_DATA])</span><br></pre></td></tr></table></figure></p>
+                <h1 id="Running-the-tests" class="article-heading"><a href="#Running-the-tests" class="headerlink" title="Running the tests"></a>Running the tests<a class="article-anchor" href="#Running-the-tests" aria-hidden="true"></a></h1><p>To enable the regression tests one must configure the build with testing enabled. To check for any known failures you may check the <a href="https://cdash.nersc.gov/index.php?project=SENSEI" target="_blank" rel="noopener">dashboard</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">cmake -DBUILD_TESTING=ON ...</span><br></pre></td></tr></table></figure>
+<p>To run the regression tests locally, from the build directory issue ctest command.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> build_dir</span><br><span class="line">ctest</span><br></pre></td></tr></table></figure>
+<p>To run tests based on the features it tests, most tests have labels. Labels are generally automatically assigned on test registration.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ctest -L PARALLEL|CATALYST</span><br></pre></td></tr></table></figure>
+<p>Label List:</p>
+<ul>
+<li><code>ADIOS1</code></li>
+<li><code>ADIOS2</code></li>
+<li><code>ASCENT</code></li>
+<li><code>CATALYST</code></li>
+<li><code>GENERAL</code></li>
+<li><code>HDF5</code></li>
+<li><code>PARALLEL</code></li>
+<li><code>PYTHON</code></li>
+<li><code>SHELL</code></li>
+<li><code>VTK_IO</code></li>
+</ul>
+<h1 id="Adding-regression-tests-using-CTest" class="article-heading"><a href="#Adding-regression-tests-using-CTest" class="headerlink" title="Adding regression tests using CTest"></a>Adding regression tests using CTest<a class="article-anchor" href="#Adding-regression-tests-using-CTest" aria-hidden="true"></a></h1><h3 id="senseiAddTest" class="article-heading"><a href="#senseiAddTest" class="headerlink" title="senseiAddTest"></a>senseiAddTest<a class="article-anchor" href="#senseiAddTest" aria-hidden="true"></a></h3><p>Tests are added by calling the CMake function <em>senseiAddTest</em>. This function<br>encapsulates the common scenarios needed to compile, link, and run tests in<br>serial, and parallel; and configures CTest to flag absolute test failures<br>(those retrurning non-zero exit code) as well as tests that print the word<br><code>ERROR</code> (case insensitive). Given that not all tests require a compile/link<br>step(eg Python based tests) arguments related to these steps are optional.</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> senseiAddTest(&lt;test_name&gt;</span><br><span class="line">  <span class="keyword">COMMAND</span> &lt;test_command&gt;...</span><br><span class="line">  [PARALLEL &lt;N&gt;]</span><br><span class="line">  [PARALLEL_SHELL &lt;N&gt;]</span><br><span class="line">  [SOURCES  &lt;source&gt;...</span><br><span class="line">   [EXEC_NAME &lt;name&gt;]</span><br><span class="line">   [LIBS &lt;libraries&gt;...]]</span><br><span class="line">  [FEATURES &lt;feature&gt;...]</span><br><span class="line">  [REQ_SENSEI_DATA]</span><br><span class="line">  [PROPERTIES &lt;property&gt;...])</span><br></pre></td></tr></table></figure>
 <p>Arguments to <em>senseiAddTest</em> are:</p>
-<ol>
-<li>test name - a unique test name (required)</li>
-<li><strong>COMMAND</strong> - a command line including all arguments needed to run the test (required)</li>
-<li><strong>EXEC_NAME</strong> - name to compile the test executable to (optional). If not given then the test name is used. Compilation of a test executable is triggered by the presence of a list of SOURCES.</li>
-<li><strong>SOURCES</strong> - a list of source code files needed to compile the test executable (optional).</li>
-<li><strong>LIBS</strong> - a list of additional libraries needed to link the test executable (optional)</li>
-<li><strong>FEATURES</strong> - a list of values used in logical AND operation to determine if the test should be enabled or not. For example calling <em>senseiAddTest</em> with <code>FEATURES ${ENABLE_PYTHON} ${ENABLE_ADIOS1}</code> will enable the test only when both Python and ADIOS 1 features are enabled. Note that this argument expects <em>values</em> hence use of the CMake dereference operator $.</li>
-<li><strong>REQ_SENSEI_DATA</strong> - a flag that indicates SENSEI’s test data repo is needed to run the test. If the data repo is not found then the test will be disabled.</li>
-</ol>
-<h3 id="examples" class="article-heading"><a href="#examples" class="headerlink" title="examples"></a>examples<a class="article-anchor" href="#examples" aria-hidden="true"></a></h3><h4 id="C-serial-and-parallel" class="article-heading"><a href="#C-serial-and-parallel" class="headerlink" title="C++, serial and parallel"></a>C++, serial and parallel<a class="article-anchor" href="#C-serial-and-parallel" aria-hidden="true"></a></h4><p>Here is an example of a serial test that needs to be compiled in C++ and depends on the SENSEI test data repository for a baseline.<br><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">senseiAddTest(testHistogramSerial</span><br><span class="line">  <span class="keyword">COMMAND</span> testHistogram EXEC_NAME testHistogram</span><br><span class="line">  SOURCES testHistogram.cpp LIBS sensei)</span><br></pre></td></tr></table></figure></p>
-<p>Now the parallel version of the test. Note that it makes use of the above test’s executable and therefore compiles nothing.<br><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">senseiAddTest(testHistogramParallel</span><br><span class="line">  <span class="keyword">COMMAND</span> <span class="variable">$&#123;MPIEXEC&#125;</span> <span class="variable">$&#123;MPIEXEC_NUMPROC_FLAG&#125;</span></span><br><span class="line">    <span class="variable">$&#123;TEST_NP&#125;</span> testHistogram)</span><br></pre></td></tr></table></figure></p>
-<h4 id="Python" class="article-heading"><a href="#Python" class="headerlink" title="Python"></a>Python<a class="article-anchor" href="#Python" aria-hidden="true"></a></h4><p>Here is an example of a Python test.<br><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">senseiAddTest(testADIOSFlexpath</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/testADIOS1.sh</span><br><span class="line">    <span class="variable">$&#123;MPIEXEC&#125;</span> <span class="variable">$&#123;MPIEXEC_NUMPROC_FLAG&#125;</span></span><br><span class="line">    <span class="variable">$&#123;TEST_NP&#125;</span> <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span></span><br><span class="line">    testADIOSFlexpath.bp FLEXPATH FLEXPATH <span class="number">2</span></span><br><span class="line">  FEATURES <span class="variable">$&#123;ENABLE_PYTHON&#125;</span> <span class="variable">$&#123;ENABLE_ADIOS1&#125;</span>)</span><br></pre></td></tr></table></figure></p>
-<h1 id="Setting-up-a-new-test-system" class="article-heading"><a href="#Setting-up-a-new-test-system" class="headerlink" title="Setting up a new test system"></a>Setting up a new test system<a class="article-anchor" href="#Setting-up-a-new-test-system" aria-hidden="true"></a></h1><p>Examples of setting up nightly and continuous test sites is beyond the scope of this document.<br>However, a few examples runs can be found at <a href>https://github.com/burlen/SENSEI_ctest</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Aruguments</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><code>&lt;test_name&gt;</code></td>
+<td><em>(required)</em> a unique test name</td>
+</tr>
+<tr>
+<td><code>COMMAND</code></td>
+<td><code>&lt;test_command&gt;</code></td>
+<td><em>(required)</em> a command line including all arguments (except MPI) needed to run the test</td>
+</tr>
+<tr>
+<td><code>PARALLEL</code></td>
+<td><code>&lt;N&gt;</code></td>
+<td><em>(optional)</em> specify the test should use an MPI launch command to run <code>test_command</code> <br> (ie. <code>mpiexec &lt;mpi-pre-args&gt; -np &lt;N&gt; &lt;mpi-post-args&gt; &lt;test_command&gt;</code>)</td>
+</tr>
+<tr>
+<td><code>PARALLEL_SHELL</code></td>
+<td><code>&lt;N&gt;</code></td>
+<td><em>(optional)</em> Export environment variables for MPI with the specified number of processes (<code>MPI_LAUNCHER</code>/<code>MPI_PROCESSES</code>/<code>MPI_PROCESSES_HALF</code>)</td>
+</tr>
+<tr>
+<td><code>SOURCES</code></td>
+<td><code>&lt;source&gt;...</code></td>
+<td><em>(optional)</em> a list of source code files needed to compile the test executable. This will trigger the compilation of the source and only needs to appear once per test executable.</td>
+</tr>
+<tr>
+<td><code>EXEC_NAME</code></td>
+<td><code>&lt;executable_name&gt;</code></td>
+<td><em>(optional)</em> name to compile the test executable to. If not given then the test <code>&lt;name&gt;</code> is used. Only used when <code>SOURCES</code> is present.</td>
+</tr>
+<tr>
+<td><code>LIBS</code></td>
+<td><code>&lt;lib&gt;...</code></td>
+<td><em>(optional)</em> a list of additional libraries needed to link the test executable. Only used when <code>SOURCES</code> is present.</td>
+</tr>
+<tr>
+<td><code>FEATURES</code></td>
+<td><code>&lt;feature&gt;...</code></td>
+<td><em>(optional)</em> a list of strings used to determine if the test should be enabled or not. For example calling <em>senseiAddTest</em> with <code>FEATURES PYTHON ADIOS2</code> will enable the test only when both <code>ENABLE_PYTHON</code> and <code>ENABLE_ADIOS2</code> 1 features are enabled. Note that this argument expects <em>strings</em> that have an <code>ENABLE_</code> prefix</td>
+</tr>
+<tr>
+<td><code>REQ_SENSEI_DATA</code></td>
+<td></td>
+<td><em>(optional)</em> a flag that indicates SENSEI’s test data repo is needed to run the test. If the data repo is not found then the test will be disabled.</td>
+</tr>
+<tr>
+<td><code>PROPERTIES</code></td>
+<td><code>&lt;property&gt;...</code></td>
+<td><em>(optional)</em> a list of <a href="https://cmake.org/cmake/help/v3.6/manual/cmake-properties.7.html\#test-properties" target="_blank" rel="noopener">test  properties</a> for this test.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="examples" class="article-heading"><a href="#examples" class="headerlink" title="examples"></a>examples<a class="article-anchor" href="#examples" aria-hidden="true"></a></h3><h4 id="C" class="article-heading"><a href="#C" class="headerlink" title="C++"></a>C++<a class="article-anchor" href="#C" aria-hidden="true"></a></h4><h5 id="Serial" class="article-heading"><a href="#Serial" class="headerlink" title="Serial"></a>Serial<a class="article-anchor" href="#Serial" aria-hidden="true"></a></h5><p>Here is an example of a serial test that needs to be compiled in C++ and depends on the SENSEI test data repository for a baseline.</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">senseiAddTest(testHistogramSerial</span><br><span class="line">  <span class="keyword">COMMAND</span> testHistogram EXEC_NAME testHistogram</span><br><span class="line">  SOURCES testHistogram.cpp LIBS sensei)</span><br></pre></td></tr></table></figure>
+<h5 id="Parallel" class="article-heading"><a href="#Parallel" class="headerlink" title="Parallel"></a>Parallel<a class="article-anchor" href="#Parallel" aria-hidden="true"></a></h5><p>Here is a parallel version of the test. Note that it makes use of the above test’s executable and therefore compiles nothing.</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">senseiAddTest(testHistogramParallel</span><br><span class="line">  <span class="keyword">COMMAND</span> testHistogram</span><br><span class="line">  PARALLEL <span class="variable">$&#123;TEST_NP&#125;</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="Python" class="article-heading"><a href="#Python" class="headerlink" title="Python"></a>Python<a class="article-anchor" href="#Python" aria-hidden="true"></a></h4><p>Here is an example of a Python test.</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">senseiAddTest(testMeshMetadata</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;PYTHON_EXECUTABLE&#125;</span> <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/testMeshMetadata.py</span><br><span class="line">  FEATURES PYTHON)</span><br></pre></td></tr></table></figure>
+<h4 id="Shell-Script" class="article-heading"><a href="#Shell-Script" class="headerlink" title="Shell Script"></a>Shell Script<a class="article-anchor" href="#Shell-Script" aria-hidden="true"></a></h4><p>Here is an example of a scripted test that uses MPI.</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">senseiAddTest(testReadWrite</span><br><span class="line">    <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/testRWDriver.sh</span><br><span class="line">            --src-dir <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span></span><br><span class="line">            --<span class="keyword">file</span> TestFile</span><br><span class="line">    PARALLEL_SHELL <span class="variable">$&#123;TEST_NP&#125;</span></span><br><span class="line">    PROPERTIES</span><br><span class="line">      ENVIRONMENT</span><br><span class="line">        PYTHON=<span class="variable">$&#123;PYTHON_EXECUTABLE&#125;</span>)</span><br></pre></td></tr></table></figure>
+<p>And in the script run the commands using the exported PARALLEL environment</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Parse the command line arguments....</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Launch the writer in the background</span></span><br><span class="line"><span class="variable">$&#123;MPI_LAUNCHER&#125;</span> <span class="variable">$&#123;PYTHON&#125;</span> <span class="variable">$&#123;srcdir&#125;</span>/testWrite.py \</span><br><span class="line">  --file <span class="variable">$&#123;file&#125;</span> \</span><br><span class="line">  <span class="variable">$&#123;MPIEXEC_POSTFLAGS&#125;</span> &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Launch the reader while the writer is stil working</span></span><br><span class="line"><span class="variable">$&#123;MPI_LAUNCHER&#125;</span> <span class="variable">$&#123;PYTHON&#125;</span> <span class="variable">$&#123;srcdir&#125;</span>/testRead.py \</span><br><span class="line">  --file <span class="variable">$&#123;file&#125;</span> \</span><br><span class="line">  <span class="variable">$&#123;MPIEXEC_POSTFLAGS&#125;</span></span><br></pre></td></tr></table></figure>
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2021-06-22T23:06:09.655Z" itemprop="dateModified">Last updated: 2021-06-22</time>
-                <a href="contribute.html" class="article-footer-prev" title="Overview"><i class="fa fa-chevron-left"></i><span>Prev</span></a>
+                <time class="article-footer-updated" datetime="2021-06-22T23:31:23.837Z" itemprop="dateModified">Last updated: 2021-06-22</time>
+                <a href="contribute.html" class="article-footer-prev" title="Overview"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="CI.html" class="article-footer-next" title="CI"><span>Next</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
             </div>
@@ -121,14 +195,14 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">Contents</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CTest-Regression-Dashboard"><span class="toc-text">CTest Regression Dashboard</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Running-the-tests"><span class="toc-text">Running the tests</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Adding-regression-tests-using-CTest"><span class="toc-text">Adding regression tests using CTest</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#senseiAddTest"><span class="toc-text">senseiAddTest</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#examples"><span class="toc-text">examples</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C-serial-and-parallel"><span class="toc-text">C++, serial and parallel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python"><span class="toc-text">Python</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Setting-up-a-new-test-system"><span class="toc-text">Setting up a new test system</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Running-the-tests"><span class="toc-text">Running the tests</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Adding-regression-tests-using-CTest"><span class="toc-text">Adding regression tests using CTest</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#senseiAddTest"><span class="toc-text">senseiAddTest</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#examples"><span class="toc-text">examples</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C"><span class="toc-text">C++</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Serial"><span class="toc-text">Serial</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Parallel"><span class="toc-text">Parallel</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python"><span class="toc-text">Python</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Shell-Script"><span class="toc-text">Shell Script</span></a></li></ol></li></ol></li></ol></li></ol>
               <a href="#" id="article-toc-top">Back to Top</a>
             </div>
           </aside>
         </div>
       </article>
       <aside id="sidebar" role="navigation">
-  <div class="inner"><strong class="sidebar-title">Using</strong><a href="index.html" class="sidebar-link">Overview</a><a href="python-analysis.html" class="sidebar-link">Python Analysis</a><a href="adios-schema.html" class="sidebar-link">Dataset schema</a><strong class="sidebar-title">Contributing</strong><a href="contribute.html" class="sidebar-link">Overview</a><a href="testing.html" class="sidebar-link current">Testing</a></div>
+  <div class="inner"><strong class="sidebar-title">Using</strong><a href="index.html" class="sidebar-link">Overview</a><a href="python-analysis.html" class="sidebar-link">Python Analysis</a><a href="adios-schema.html" class="sidebar-link">Dataset schema</a><strong class="sidebar-title">Contributing</strong><a href="contribute.html" class="sidebar-link">Overview</a><a href="testing.html" class="sidebar-link current">Testing</a><a href="CI.html" class="sidebar-link">CI</a></div>
 </aside>
     </div>
   </div>
@@ -156,7 +230,7 @@
       </li>
     </ul>
     
-      <strong class="mobile-nav-title">Using</strong><a href="index.html" class="mobile-nav-link">Overview</a><a href="python-analysis.html" class="mobile-nav-link">Python Analysis</a><a href="adios-schema.html" class="mobile-nav-link">Dataset schema</a><strong class="mobile-nav-title">Contributing</strong><a href="contribute.html" class="mobile-nav-link">Overview</a><a href="testing.html" class="mobile-nav-link current">Testing</a>
+      <strong class="mobile-nav-title">Using</strong><a href="index.html" class="mobile-nav-link">Overview</a><a href="python-analysis.html" class="mobile-nav-link">Python Analysis</a><a href="adios-schema.html" class="mobile-nav-link">Dataset schema</a><strong class="mobile-nav-title">Contributing</strong><a href="contribute.html" class="mobile-nav-link">Overview</a><a href="testing.html" class="mobile-nav-link current">Testing</a><a href="CI.html" class="mobile-nav-link">CI</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
