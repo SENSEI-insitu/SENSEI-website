@@ -134,5 +134,4 @@ ${MPI_LAUNCHER} ${PYTHON} ${srcdir}/testRead.py \
   ${MPIEXEC_POSTFLAGS}
 ```
 
-Examples of setting up nightly and continuous test sites is beyond the scope of this document.
-However, a few examples runs can be found at [https://github.com/burlen/SENSEI_ctest]().
+[dashboard]: https://cdash.nersc.gov/index.php?project=SENSEI
