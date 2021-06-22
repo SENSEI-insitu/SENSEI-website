@@ -33,6 +33,7 @@ sidebar:
     python-analysis: Python Analysis
     dataset-schema: Dataset schema
     testing: Testing
+    ci: CI
     contributing: Contributing
   tutorials:
     supercomputing: Supercomputing Conference

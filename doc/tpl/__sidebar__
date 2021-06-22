@@ -15,6 +15,7 @@ develop:
   contributing:
     overview: contribute.html
     testing: testing.html
+    ci: CI.html
 
 tutorials:
   supercomputing:
