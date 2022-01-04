@@ -38,8 +38,10 @@ sidebar:
   tutorials:
     supercomputing: Supercomputing Conference
     isc: ISC High Performace Computing
+    scidac: DOE SciDAC
     sc17: Supercomputing 2017
     sc18: Supercomputing 2018
     sc19: Supercomputing 2019
     sc20: Supercomputing 2020
     isc19: ISC-HPC 2019
+    scidac21: RAPIDS2 SciDAC 2021
