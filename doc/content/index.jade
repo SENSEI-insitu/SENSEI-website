@@ -6,6 +6,24 @@ img: https://data.kitware.com/api/v1/file/5c5c7a7d8d777f072b38863b/download
 imgcaption: ParaView/Catalyst on 256,000 processes on Mira.
 comments: false
 ---
+div 
+  p(style="margin: 0 auto; padding-top: 30px; width: 75%;font-size: 16px;")
+    | SENSEI is an open-source, generic in situ interface that allows parallel 
+    | simulations or other data producers to code-couple to parallel third-party 
+    | endpoints. These endpoints may be applications or tools/methods, including 
+    | user-written code in C++ or Python and a growing class of data-intensive 
+    | capabilities accessible through Python, capabilities such as AI/ML. Once a 
+    | data producer is instrumented with the SENSEI interface, changing to a 
+    | different endpoint is as simple as modifying an XML configuration file with 
+    | a text editor. SENSEI fully supports configurations where the simulation and 
+    | endpoint are run at differing levels of concurrency and will manage the 
+    | potentially tricky process of partitioning and moving data from the M producer 
+    | ranks to the N consumer ranks. The movement of data may be bidirectional, 
+    | which means that a simulation sends data to an endpoint and has access to 
+    | results computed from the endpoint. While initially designed and implemented 
+    | for analysis, visualization, and other data-intensive in situ tasks, SENSEI's 
+    | design and implementation support the coupling of arbitrary code. SENSEI is 
+    | available as part of the DOE Exascale Computing Project (ECP) Data-Vis SDK.
 
 ul#intro-feature-list
   li.intro-feature-wrap
