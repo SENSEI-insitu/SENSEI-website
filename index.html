@@ -46,7 +46,7 @@
 <meta property="og:site_name" content="sensei">
 <meta property="og:description" content="SENSEI in situ">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2022-01-04T20:12:21.553Z">
+<meta property="og:updated_time" content="2022-01-13T16:38:49.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sensei">
 <meta name="twitter:description" content="SENSEI in situ">
@@ -102,7 +102,22 @@
 <div id="content-wrap">
   <div class="wrapper">
     <div class="inner">
-      <ul id="intro-feature-list"><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-cloud-download"></i></div><h3 class="intro-feature-title"><a href="https://github.com/SENSEI-insitu/SENSEI/tags" class="link" target="_blank" rel="noopener">Releases</a></h3><p class="intro-feature-desc">SENSEI source code releases are tagged and downloadable here.</p></div></li><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-book"></i></div><h3 class="intro-feature-title"><a href="/tutorials" class="link">Tutorials</a></h3><p class="intro-feature-desc">Tutorial materials, including slides and a virtual machine presented at Supercomputing.</p></div></li><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-tachometer"></i></div><h3 class="intro-feature-title"><a href="http://cdash.nersc.gov/index.php?project=SENSEI" class="link" target="_blank" rel="noopener">Testing dashboard</a></h3><p class="intro-feature-desc">SENSEI is tested as commits are merged.</p></div></li><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-bug"></i></div><h3 class="intro-feature-title"><a href="http://github.com/SENSEI-insitu/SENSEI/issues" class="link" target="_blank" rel="noopener">Issues</a></h3><p class="intro-feature-desc">Report a bug or request a feature.</p></div></li><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-comments-o"></i></div><h3 class="intro-feature-title"><a href="http://discourse.kitware.com/c/sensei" class="link" target="_blank" rel="noopener">Community &amp; Feedback</a></h3><p class="intro-feature-desc">Tell us what you think!</p></div></li></ul><div id="intro-get-started-wrap"><a href="/learn-more/index.html" id="intro-get-started-link">Learn more</a></div><script>function getRandomInt(min, max) {
+      <div> <p style="margin: 0 auto; padding-top: 30px; width: 75%;font-size: 16px;">SENSEI is an open-source, generic in situ interface that allows parallel 
+simulations or other data producers to code-couple to parallel third-party 
+endpoints. These endpoints may be applications or tools/methods, including 
+user-written code in C++ or Python and a growing class of data-intensive 
+capabilities accessible through Python, capabilities such as AI/ML. Once a 
+data producer is instrumented with the SENSEI interface, changing to a 
+different endpoint is as simple as modifying an XML configuration file with 
+a text editor. SENSEI fully supports configurations where the simulation and 
+endpoint are run at differing levels of concurrency and will manage the 
+potentially tricky process of partitioning and moving data from the M producer 
+ranks to the N consumer ranks. The movement of data may be bidirectional, 
+which means that a simulation sends data to an endpoint and has access to 
+results computed from the endpoint. While initially designed and implemented 
+for analysis, visualization, and other data-intensive in situ tasks, SENSEI's 
+design and implementation support the coupling of arbitrary code. SENSEI is 
+available as part of the DOE Exascale Computing Project (ECP) Data-Vis SDK.</p></div><ul id="intro-feature-list"><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-cloud-download"></i></div><h3 class="intro-feature-title"><a href="https://github.com/SENSEI-insitu/SENSEI/tags" class="link" target="_blank" rel="noopener">Releases</a></h3><p class="intro-feature-desc">SENSEI source code releases are tagged and downloadable here.</p></div></li><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-book"></i></div><h3 class="intro-feature-title"><a href="/tutorials" class="link">Tutorials</a></h3><p class="intro-feature-desc">Tutorial materials, including slides and a virtual machine presented at Supercomputing.</p></div></li><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-tachometer"></i></div><h3 class="intro-feature-title"><a href="http://cdash.nersc.gov/index.php?project=SENSEI" class="link" target="_blank" rel="noopener">Testing dashboard</a></h3><p class="intro-feature-desc">SENSEI is tested as commits are merged.</p></div></li><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-bug"></i></div><h3 class="intro-feature-title"><a href="http://github.com/SENSEI-insitu/SENSEI/issues" class="link" target="_blank" rel="noopener">Issues</a></h3><p class="intro-feature-desc">Report a bug or request a feature.</p></div></li><li class="intro-feature-wrap"><div class="intro-feature"><div class="intro-feature-icon"><i class="fa fa-comments-o"></i></div><h3 class="intro-feature-title"><a href="http://discourse.kitware.com/c/sensei" class="link" target="_blank" rel="noopener">Community &amp; Feedback</a></h3><p class="intro-feature-desc">Tell us what you think!</p></div></li></ul><div id="intro-get-started-wrap"><a href="/learn-more/index.html" id="intro-get-started-link">Learn more</a></div><script>function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
